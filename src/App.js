@@ -1,3 +1,4 @@
+import React, { StrictMode } from "react";
 import { useState } from "react";
 
 function Square({ value, onSquareClick }) {
@@ -15,6 +16,7 @@ export default function Board() {
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
       return;
+      // this causes the application to not allow already filled squares to be changed
     }
     const nextSquares = squares.slice();
     if (xIsNext) {
